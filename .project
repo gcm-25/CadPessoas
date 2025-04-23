@@ -24,7 +24,7 @@
 		<filter>
 			<id>1744163707257</id>
 			<name></name>
-			<type>30</type>
+			<type>20</type>
 			<matcher>
 				<id>org.eclipse.core.resources.regexFilterMatcher</id>
 				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
