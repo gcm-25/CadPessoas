@@ -15,13 +15,13 @@ import java.util.ArrayList;
 public class CidadesResource {
 
 
-	@EJB
+	@EJB //acessa Banco de Dados
 	private BeanCrudCidade beanCrudCidade;
 
 
 	@GET
-	@Path("all")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Path("all") 
+	@Produces({ MediaType.APPLICATION_JSON }) //Pega todas cidades e transforma em JSON
 	public ArrayList<JsonCidade> getCids(){
 		ArrayList<JsonCidade> cidadel = new ArrayList<>();
 		for(Cidade cid:beanCrudCidade.getAll()){
@@ -32,7 +32,7 @@ public class CidadesResource {
 
 	@PUT
 	@Path("add/{id}/{nome}")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON) //Faz cidade com id e nome escritos
 	public void add(@PathParam("id") int id,@PathParam("nome") String nome){
 		Cidade cid = new Cidade();
 		cid.setId(id);
@@ -52,12 +52,12 @@ public class CidadesResource {
 
 	@PUT
 	@Path("addobj")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON) //Adiciona persistencia
 	public void addObj(Cidade cid){
 		beanCrudCidade.persist(cid);
 	}
 
 
-	public record JsonCidade(int id, String nome){}
+	public record JsonCidade(int id, String nome){} //Adiciona ao Banco
 
 }
