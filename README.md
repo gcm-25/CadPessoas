@@ -77,6 +77,7 @@ docker run -it --rm -e DATABASE_URL="jdbc:postgresql://192.168.0.110:5432/locald
 Assim que a execução começar, você poderá acessar o projeto em http://localhost:8080/Cadastro-Pessoas
 
 Exemplo de configuração para o bd em produção:
+
 ```
 docker run -it  --rm   --name ProductPostgresDb    -p 5432:5432     -e POSTGRES_USER=postgres     -e POSTGRES_PASSWORD=sudodb     -e POSTGRES_DB=customerdb   -e PGDATA=/var/lib/postgresql/data/pgdata -v C:/Users/UTFPR/Downloads/dados:/var/lib/postgresql/data -d postgres
 ```
